@@ -1,0 +1,27 @@
+.autogrow {
+  border: 1px solid black;
+  font-family: 'Inter', sans-serif;
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 32px;
+  word-break: break-all;
+}
+
+.grow-wrap {
+  display: grid;
+  min-height: 50vh;
+  &::after {
+    content: attr(data-replicated-value);
+    white-space: pre-wrap;
+    visibility: hidden;
+    @extend .autogrow;
+  }
+  
+  textarea {
+    resize: none;
+    overflow: hidden;
+    color: #0A3871;
+    border: none;
+    background: transparent;
+    @extend .autogrow;
+  }
+}

@@ -1,0 +1,25 @@
+// Screen size for responsive mobile-first approach
+$small-screen: 460px;
+$medium-screen: 769px;
+$large-screen: 1440px;
+
+// Breakpoint from 461px or greater
+@mixin sm-screen {
+    @media (min-width: #{$small-screen}) {
+        @content;
+    }
+}
+
+// Breakpoint from 769 or greater
+@mixin md-screen {
+    @media (min-width: #{$medium-screen}) {
+        @content;
+    }
+}
+
+// Breakpoint from 1440px or greater
+@mixin lg-screen {
+    @media (min-width: #{$large-screen}) {
+        @content;
+    }
+}

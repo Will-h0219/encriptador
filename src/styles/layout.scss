@@ -1,0 +1,134 @@
+@import './medias.scss';
+
+.result-base {
+  background: #ffffff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  margin: 40px 24px;
+  padding: 32px;
+  @include md-screen() {
+    min-width: 28%;
+    max-width: 28%;
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  height: fit-content;
+  @include md-screen() {
+    flex-flow: row;
+    height: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    width: 32px;
+    height: auto;
+    top: 24px;
+    left: 16px;
+    @include sm-screen() {
+      top: 73px;
+      left: 40px;
+    }
+    @include md-screen() {
+      top: 40px;
+      left: 84px;
+    }
+  }
+
+  .entries {
+    margin: 24px 16px;
+    padding-top: 120px;
+    @include sm-screen() {
+      margin: 24px 40px;
+      padding-top: 150px;
+    }
+    @include md-screen() {
+      margin: 0;
+      padding-left: 15%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wrapper {
+      .note {
+        color: #495057;
+        font-size: 12px;
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+  
+      .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include sm-screen() {
+          flex-direction: row;
+        }
+        @include md-screen() {
+          padding-bottom: 72px;
+        }
+      }
+    }
+  }
+
+  .not-found {
+    @extend .result-base;
+    text-align: center;
+    &-img {
+      display: none;
+      @include md-screen() {
+        display: block;
+        margin-bottom: 16px;
+      }
+    }
+    h1 {
+      color: #343A40;
+      font-size: 24px
+    }
+    p {
+      color: #495057;
+      font-size: 16px
+    }
+    @include md-screen() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  .result {
+    @extend .result-base;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    font-size: 24px;
+    color: #495057;
+    p {
+      margin: 0;
+      line-height: 150%;
+      word-break: break-all;
+    }
+    @include md-screen() {
+      justify-content: space-between;
+    }
+  }
+
+  .inactive {
+    display: none;
+  }
+}
