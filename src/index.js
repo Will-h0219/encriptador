@@ -1,7 +1,5 @@
 import './styles.scss';
-import logo from './logo.svg';
-import img from './not-found.svg';
-import warning from './warning.svg';
+import * as images from './images';
 
 import { Encrypter } from './modules/encrypter';
 
