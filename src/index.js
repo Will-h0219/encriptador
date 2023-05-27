@@ -11,6 +11,12 @@ const notFoundContainer = document.querySelector('#notFound');
 const resultContainer = document.querySelector('#result');
 const strRegex = /^[a-z!¡¿?\s]+$/;
 
+const autoScroll = () => {
+  if (window.innerWidth <= 768) {
+    resultContainer.scrollIntoView({block: 'center', behavior: 'smooth'});
+  }
+}
+
 const showResult = (value) => {
   const children = `
     <p class="result-text">${value}</p>
@@ -19,6 +25,7 @@ const showResult = (value) => {
   resultContainer.innerHTML = children;
   notFoundContainer.classList.add('inactive');
   resultContainer.classList.remove('inactive');
+  autoScroll();
 }
 
 encrypBtn.addEventListener('click', () => {
